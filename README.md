@@ -63,6 +63,8 @@ python3 analyze_rater_agreement.py --self-test
 | [`medclaim-validation-v0.2.md`](medclaim-validation-v0.2.md) | 数据、Rubric、计算和已知限制复核 |
 | [`medclaim-50-case-validation-v0.1.md`](medclaim-50-case-validation-v0.1.md) | 50例组成、隔离、许可、检索和剩余有效性缺口 |
 | [`medclaim-prd.md`](medclaim-prd.md) | 用户、边界、输出契约、失败归因和验收标准 |
+| [`medclaim-prototype.html`](medclaim-prototype.html) | 三屏可点击审核原型：队列、证据复核与人工决定记录 |
+| [`medclaim-prototype-uat.md`](medclaim-prototype-uat.md) | 自动预检结果与60分钟本人UAT/Figma复刻关卡 |
 
 ## 输入格式
 

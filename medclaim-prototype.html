@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MedClaim Evidence Checker — Clickable Prototype</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 fill=%22%232563eb%22/><path d=%22M16 32h32M32 16v32%22 stroke=%22white%22 stroke-width=%228%22/></svg>">
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #626a76;
+      --rule: #d9dde4;
+      --panel: #f3f4f6;
+      --blue: #2563eb;
+      --blue-soft: #dbeafe;
+      --danger: #b42318;
+      --white: #fff;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--white);
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    a { color: var(--blue); }
+    a:focus-visible, button:focus-visible, input:focus-visible + span {
+      outline: 3px solid #93c5fd;
+      outline-offset: 3px;
+    }
+
+    .shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 24px 0 56px; }
+    .topbar { display: flex; justify-content: space-between; gap: 24px; align-items: center; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
+    .brand { font-weight: 800; letter-spacing: -.02em; }
+    .badge { padding: 7px 10px; background: var(--panel); font-size: 13px; font-weight: 700; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 28px 0 54px; }
+    .step { border-top: 3px solid var(--rule); padding-top: 10px; color: var(--muted); font-size: 14px; }
+    .step.active { border-color: var(--blue); color: var(--ink); font-weight: 800; }
+
+    .view[hidden] { display: none; }
+    .eyebrow { color: var(--blue); font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    h1 { max-width: 900px; margin: 10px 0 14px; font-size: clamp(36px, 5vw, 64px); line-height: .98; letter-spacing: -.045em; }
+    h2 { margin: 0 0 12px; font-size: 28px; letter-spacing: -.025em; }
+    h3 { margin: 0 0 10px; font-size: 18px; }
+    p { line-height: 1.55; }
+    .lede { max-width: 720px; color: var(--muted); font-size: 19px; }
+    .scope { margin: 34px 0; padding: 16px 18px; border-left: 6px solid var(--blue); background: var(--blue-soft); font-weight: 650; }
+
+    .queue { margin-top: 40px; border-top: 1px solid var(--ink); }
+    .case-row { display: grid; grid-template-columns: 110px minmax(0, 1.5fr) minmax(180px, .8fr) 150px; gap: 24px; align-items: center; padding: 24px 0; border-bottom: 1px solid var(--rule); }
+    .case-id { font-weight: 800; }
+    .case-claim { margin: 0; font-weight: 650; }
+    .case-meta { color: var(--muted); font-size: 14px; }
+    .risk { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
+    .risk::before { content: "!"; display: inline-grid; place-items: center; width: 22px; height: 22px; border: 2px solid var(--ink); border-radius: 50%; }
+
+    .primary, .secondary {
+      min-height: 44px;
+      border: 1px solid var(--ink);
+      padding: 10px 16px;
+      font-weight: 800;
+    }
+    .primary { background: var(--ink); color: var(--white); }
+    .primary:hover { background: var(--blue); border-color: var(--blue); }
+    .secondary { background: var(--white); color: var(--ink); }
+    .secondary:hover { background: var(--panel); }
+
+    .review-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(340px, .85fr); gap: 54px; align-items: start; }
+    .claim-box { margin: 24px 0; padding: 26px; background: var(--ink); color: var(--white); font-size: 22px; line-height: 1.45; }
+    .evidence { border-top: 1px solid var(--ink); padding-top: 22px; }
+    .evidence-grid { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+    .label { color: var(--muted); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; }
+    .value { margin: 0; }
+
+    .decision-panel { position: sticky; top: 24px; padding: 26px; background: var(--panel); }
+    fieldset { margin: 22px 0; padding: 0; border: 0; }
+    legend { margin-bottom: 12px; font-weight: 800; }
+    .radio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .radio-option { position: relative; }
+    .radio-option input { position: absolute; opacity: 0; pointer-events: none; }
+    .radio-option span { display: grid; min-height: 58px; place-items: center; padding: 8px; border: 1px solid #b8bec8; background: var(--white); font-weight: 700; text-align: center; }
+    .radio-option input:checked + span { border: 2px solid var(--blue); background: var(--blue-soft); color: #12367a; }
+    .route-option { display: flex; align-items: flex-start; gap: 10px; margin: 10px 0; }
+    .route-option input { margin-top: 4px; }
+    .error { min-height: 24px; margin: 4px 0 10px; color: var(--danger); font-weight: 800; }
+    .decision-panel .primary { width: 100%; }
+    .boundary { color: var(--muted); font-size: 13px; }
+
+    .record { display: grid; grid-template-columns: minmax(280px, .75fr) minmax(0, 1.25fr); gap: 48px; margin-top: 38px; }
+    .result-block { padding: 30px; background: var(--blue-soft); }
+    .result-label { margin: 8px 0 24px; font-size: 42px; font-weight: 850; letter-spacing: -.04em; }
+    .route { display: inline-block; padding-top: 12px; border-top: 2px solid var(--ink); font-weight: 800; }
+    .audit { border-top: 1px solid var(--ink); }
+    .audit-row { display: grid; grid-template-columns: 170px 1fr; gap: 18px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+    .actions { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+    .footer-note { margin-top: 54px; padding-top: 18px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 28px, 680px); padding-top: 16px; }
+      .topbar { align-items: flex-start; }
+      .steps { margin-bottom: 36px; }
+      .step { font-size: 12px; }
+      .case-row, .review-grid, .record { grid-template-columns: 1fr; }
+      .case-row { gap: 12px; }
+      .case-row .primary { width: 100%; }
+      .decision-panel { position: static; }
+      .evidence-grid, .audit-row { grid-template-columns: 1fr; gap: 5px; }
+      .radio-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">MedClaim Evidence Checker</div>
+      <div class="badge">Offline portfolio prototype</div>
+    </header>
+
+    <nav class="steps" aria-label="Review progress">
+      <div class="step active" data-step="queue">1 · Queue</div>
+      <div class="step" data-step="review">2 · Evidence review</div>
+      <div class="step" data-step="record">3 · Decision record</div>
+    </nav>
+
+    <section class="view" id="queue-view" aria-labelledby="queue-title">
+      <div class="eyebrow">Human-in-the-loop medical AI</div>
+      <h1 id="queue-title">Review claims against the evidence that actually supports them.</h1>
+      <p class="lede">The prototype makes population, line of therapy, numbers, and source boundaries visible before a medical content decision is recorded.</p>
+      <div class="scope">Public evidence only · No patient data · Every decision requires human approval</div>
+
+      <div class="queue" aria-label="Review queue">
+        <article class="case-row">
+          <div>
+            <div class="case-id">MC003</div>
+            <div class="case-meta">Gastric cancer</div>
+          </div>
+          <p class="case-claim">T-DXd achieved 51% versus 14% ORR in DESTINY-Gastric01, and overall survival was the primary endpoint.</p>
+          <div>
+            <div class="risk">Mixed factuality</div>
+            <div class="case-meta">NCI PDQ · public source</div>
+          </div>
+          <button class="primary" id="open-review" type="button">Open review</button>
+        </article>
+      </div>
+      <p class="footer-note">Demo data comes from a public development case. It is not a hidden test result or a clinical recommendation.</p>
+    </section>
+
+    <section class="view" id="review-view" aria-labelledby="review-title" hidden>
+      <div class="eyebrow">Case MC003 · Evidence review</div>
+      <h1 id="review-title">Separate the supported numbers from the unsupported study claim.</h1>
+
+      <div class="review-grid">
+        <div>
+          <h2>Claim under review</h2>
+          <div class="claim-box">“In DESTINY-Gastric01, T-DXd achieved an objective response rate of 51% versus 14% with physician's-choice chemotherapy; overall survival was the primary endpoint.”</div>
+
+          <div class="evidence">
+            <div class="evidence-grid">
+              <div class="label">Minimum evidence</div>
+              <p class="value">The independent central-review ORR was 51% versus 14%. The stated primary endpoint was objective response—not overall survival.</p>
+            </div>
+            <div class="evidence-grid">
+              <div class="label">Population / line</div>
+              <p class="value">HER2-positive advanced gastric or gastro-oesophageal junction cancer in Japan and South Korea; at least two prior lines including trastuzumab.</p>
+            </div>
+            <div class="evidence-grid">
+              <div class="label">Source boundary</div>
+              <p class="value">Trial summary evidence. It does not expand the regulatory indication or support an individual treatment recommendation.</p>
+            </div>
+            <div class="evidence-grid">
+              <div class="label">Source</div>
+              <p class="value"><a href="https://www.cancer.gov/types/stomach/hp/stomach-treatment-pdq" target="_blank" rel="noreferrer">NCI Gastric Cancer Treatment (PDQ)</a>, trastuzumab deruxtecan section; checked 2026-09-01.</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="decision-panel" id="decision-form" novalidate>
+          <h2>Human decision</h2>
+          <p class="boundary">The system organizes evidence; a reviewer owns the final label and escalation route.</p>
+
+          <fieldset>
+            <legend>Final label</legend>
+            <div class="radio-grid">
+              <label class="radio-option"><input type="radio" name="label" value="Support"><span>Support</span></label>
+              <label class="radio-option"><input type="radio" name="label" value="Partial support"><span>Partial support</span></label>
+              <label class="radio-option"><input type="radio" name="label" value="Unsupported"><span>Unsupported</span></label>
+              <label class="radio-option"><input type="radio" name="label" value="Insufficient evidence"><span>Insufficient evidence</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Review route</legend>
+            <label class="route-option"><input type="radio" name="route" value="Routine human review"><span><strong>Routine human review</strong><br><span class="boundary">No critical boundary conflict identified.</span></span></label>
+            <label class="route-option"><input type="radio" name="route" value="Priority human review" checked><span><strong>Priority human review</strong><br><span class="boundary">Mixed truth conditions or a decisive study-design error.</span></span></label>
+          </fieldset>
+
+          <p class="error" id="decision-error" role="alert" tabindex="-1"></p>
+          <button class="primary" type="submit">Submit human decision</button>
+        </form>
+      </div>
+      <p class="footer-note">Prototype behavior is deterministic and offline. No model is called and nothing is published.</p>
+    </section>
+
+    <section class="view" id="record-view" aria-labelledby="record-title" hidden>
+      <div class="eyebrow">Decision saved locally in this demo</div>
+      <h1 id="record-title">The evidence trail remains attached to the human decision.</h1>
+
+      <div class="record">
+        <div class="result-block">
+          <div class="label">Final human label</div>
+          <div class="result-label" id="result-label">—</div>
+          <div class="route" id="result-route">—</div>
+        </div>
+
+        <div>
+          <h2>Audit record</h2>
+          <div class="audit">
+            <div class="audit-row"><div class="label">Case</div><div>MC003 · public development example</div></div>
+            <div class="audit-row"><div class="label">Reason</div><div>The reported ORR values match; the primary-endpoint statement does not.</div></div>
+            <div class="audit-row"><div class="label">Evidence</div><div>NCI PDQ · trastuzumab deruxtecan section · checked 2026-09-01</div></div>
+            <div class="audit-row"><div class="label">Reviewer</div><div>Human reviewer · prototype session</div></div>
+            <div class="audit-row"><div class="label">Release</div><div>Blocked from automatic publication</div></div>
+          </div>
+          <div class="actions">
+            <button class="primary" id="review-again" type="button">Review again</button>
+            <button class="secondary" id="back-queue" type="button">Back to queue</button>
+          </div>
+        </div>
+      </div>
+      <p class="footer-note">This record demonstrates traceability. It does not demonstrate clinical validation, production EHR integration, or time savings.</p>
+    </section>
+  </main>
+
+  <script>
+    const views = {
+      queue: document.querySelector("#queue-view"),
+      review: document.querySelector("#review-view"),
+      record: document.querySelector("#record-view"),
+    };
+    const steps = [...document.querySelectorAll("[data-step]")];
+    const form = document.querySelector("#decision-form");
+    const error = document.querySelector("#decision-error");
+
+    function showView(name) {
+      Object.entries(views).forEach(([key, view]) => { view.hidden = key !== name; });
+      steps.forEach((step) => step.classList.toggle("active", step.dataset.step === name));
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+
+    function resetDecision() {
+      form.reset();
+      form.elements.route.value = "Priority human review";
+      error.textContent = "";
+    }
+
+    document.querySelector("#open-review").addEventListener("click", () => showView("review"));
+    document.querySelector("#review-again").addEventListener("click", () => {
+      resetDecision();
+      showView("review");
+    });
+    document.querySelector("#back-queue").addEventListener("click", () => {
+      resetDecision();
+      showView("queue");
+    });
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const label = data.get("label");
+      if (!label) {
+        error.textContent = "Choose one final label before submitting.";
+        error.focus();
+        return;
+      }
+      error.textContent = "";
+      document.querySelector("#result-label").textContent = label;
+      document.querySelector("#result-route").textContent = data.get("route");
+      showView("record");
+    });
+
+    // ponytail: inline smoke check is enough until the prototype gains persistence or network state.
+    console.assert(document.querySelectorAll('input[name="label"]').length === 4, "Four decision labels are required");
+    console.assert(document.body.textContent.includes("MC003"), "The public demo case must be present");
+  </script>
+</body>
+</html>
