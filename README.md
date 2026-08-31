@@ -10,6 +10,7 @@ python3 evaluate_medclaim.py --self-test
 python3 evaluate_medclaim.py
 python3 retrieve_medclaim.py --self-test
 python3 retrieve_medclaim.py
+python3 run_medclaim_model.py --self-test
 ```
 
 第二条命令会读取 10 条金标准和多数类规则预测，生成 JSON 与 Markdown 报告。当前基线结果：
@@ -48,6 +49,7 @@ python3 retrieve_medclaim.py
 | [`medclaim-holdout-retrieved-context-open-review-v0.1.csv`](medclaim-holdout-retrieved-context-open-review-v0.1.csv) | 第二组不含 gold 的 RAG 模型输入 |
 | [`medclaim-model-evaluation-protocol.md`](medclaim-model-evaluation-protocol.md) | 无检索/RAG 固定提示词、输出契约和污染控制 |
 | [`medclaim-model-output-schema.json`](medclaim-model-output-schema.json) | 独立模型结构化输出的 JSON Schema |
+| [`run_medclaim_model.py`](run_medclaim_model.py) | 固定条件并隔离 gold 的无检索/RAG重复实验 runner |
 | [`medclaim-model-comparison-run1.md`](medclaim-model-comparison-run1.md) | 20例无检索/RAG单次探索性对比与错误边界 |
 | [`medclaim-error-report-v0.1.md`](medclaim-error-report-v0.1.md) | 多数类规则基线的错误分布与下一轮实验假设 |
 | [`medclaim-demo-script-3min.md`](medclaim-demo-script-3min.md) | 面试现场可照着运行和讲解的3分钟脚本 |
