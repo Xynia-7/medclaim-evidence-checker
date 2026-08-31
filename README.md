@@ -45,6 +45,8 @@ python3 retrieve_medclaim.py
 | [`medclaim-holdout-retrieved-context-v0.1.csv`](medclaim-holdout-retrieved-context-v0.1.csv) | 不含 gold 的 RAG 模型输入 |
 | [`medclaim-holdout-retrieved-context-open-review-v0.1.csv`](medclaim-holdout-retrieved-context-open-review-v0.1.csv) | 第二组不含 gold 的 RAG 模型输入 |
 | [`medclaim-model-evaluation-protocol.md`](medclaim-model-evaluation-protocol.md) | 无检索/RAG 固定提示词、输出契约和污染控制 |
+| [`medclaim-error-report-v0.1.md`](medclaim-error-report-v0.1.md) | 多数类规则基线的错误分布与下一轮实验假设 |
+| [`medclaim-demo-script-3min.md`](medclaim-demo-script-3min.md) | 面试现场可照着运行和讲解的3分钟脚本 |
 | [`medclaim-source-pack.md`](medclaim-source-pack.md) | FDA、NCI、EMA、PubMed/PMC 资料边界 |
 | [`medclaim-validation-v0.2.md`](medclaim-validation-v0.2.md) | 数据、Rubric、计算和已知限制复核 |
 | [`medclaim-50-case-validation-v0.1.md`](medclaim-50-case-validation-v0.1.md) | 50例组成、隔离、许可、检索和剩余有效性缺口 |
@@ -74,4 +76,4 @@ case_id,predicted_label,support_relation,population_line_score,numeric_outcome_s
 
 1. 在可用的独立模型端点上只读取 holdout prompts，生成无检索基线；
 2. 再让同一模型读取 retrieved context，生成 RAG 回答并比较；
-3. 完成第二评分者复核、两组模型对比、错误报告和3分钟演示。
+3. 完成第二评分者复核和两组模型对比。
