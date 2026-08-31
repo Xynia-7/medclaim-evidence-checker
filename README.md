@@ -25,6 +25,8 @@ python3 retrieve_medclaim.py
 
 当前病例总数为 50：30 条开发/校准病例、20 条隔离 holdout。开发病例不能冒充独立测试结果，50例也不能证明模型有效。
 
+在一次隔离的 `gpt-5.6-sol / low` 探索性运行中，同一20条 holdout 的无检索/RAG Accuracy 为 80%/85%，Macro-F1 为 0.7833/0.8272，Rubric 通过率为 75%/85%，严重失败率均为0%。这是单次、单评分者结果，只能用于形成下一轮假设，不能声称稳定提升。
+
 ## 文件
 
 | 文件 | 用途 |
@@ -45,6 +47,8 @@ python3 retrieve_medclaim.py
 | [`medclaim-holdout-retrieved-context-v0.1.csv`](medclaim-holdout-retrieved-context-v0.1.csv) | 不含 gold 的 RAG 模型输入 |
 | [`medclaim-holdout-retrieved-context-open-review-v0.1.csv`](medclaim-holdout-retrieved-context-open-review-v0.1.csv) | 第二组不含 gold 的 RAG 模型输入 |
 | [`medclaim-model-evaluation-protocol.md`](medclaim-model-evaluation-protocol.md) | 无检索/RAG 固定提示词、输出契约和污染控制 |
+| [`medclaim-model-output-schema.json`](medclaim-model-output-schema.json) | 独立模型结构化输出的 JSON Schema |
+| [`medclaim-model-comparison-run1.md`](medclaim-model-comparison-run1.md) | 20例无检索/RAG单次探索性对比与错误边界 |
 | [`medclaim-error-report-v0.1.md`](medclaim-error-report-v0.1.md) | 多数类规则基线的错误分布与下一轮实验假设 |
 | [`medclaim-demo-script-3min.md`](medclaim-demo-script-3min.md) | 面试现场可照着运行和讲解的3分钟脚本 |
 | [`medclaim-source-pack.md`](medclaim-source-pack.md) | FDA、NCI、EMA、PubMed/PMC 资料边界 |
@@ -74,6 +78,6 @@ case_id,predicted_label,support_relation,population_line_score,numeric_outcome_s
 
 ## 下一里程碑
 
-1. 在可用的独立模型端点上只读取 holdout prompts，生成无检索基线；
-2. 再让同一模型读取 retrieved context，生成 RAG 回答并比较；
-3. 完成第二评分者复核和两组模型对比。
+1. 由第二评分者盲态复核 run1 的六维人工评分；
+2. 用相同参数再运行两次，报告三次均值与波动；
+3. 针对“证据不足”和决定性错误的标签优先级做开发集回归，不修改本轮 holdout gold。

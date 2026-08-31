@@ -3,6 +3,11 @@ medclaim-holdout-gold-*.csv
 medclaim-holdout-results-*.json
 medclaim-holdout-results-*.md
 medclaim-holdout-results-*.csv
+medclaim-model-output-no-retrieval-*.json
+medclaim-model-output-rag-*.json
+medclaim-model-scored-*.csv
+medclaim-model-results-*.json
+medclaim-model-results-*.md
 
 # Keep personal planning, job materials, and local artifacts outside the public portfolio.
 report-*.md

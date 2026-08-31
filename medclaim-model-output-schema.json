@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["predictions"],
+  "properties": {
+    "predictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "case_id",
+          "label",
+          "reason",
+          "evidence_locator",
+          "population_line",
+          "boundary",
+          "needs_human_review"
+        ],
+        "properties": {
+          "case_id": {"type": "string"},
+          "label": {"enum": ["支持", "部分支持", "不支持", "证据不足"]},
+          "reason": {"type": "string"},
+          "evidence_locator": {"type": "string"},
+          "population_line": {"type": "string"},
+          "boundary": {"type": "string"},
+          "needs_human_review": {"type": "boolean"}
+        }
+      }
+    }
+  }
+}
