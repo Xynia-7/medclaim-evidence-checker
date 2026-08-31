@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ratings"],
+  "properties": {
+    "ratings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "condition",
+          "case_id",
+          "support_relation",
+          "population_line_score",
+          "numeric_outcome_score",
+          "citation_validity_score",
+          "evidence_boundary_score",
+          "auditability_score",
+          "critical_failure",
+          "failure_root_cause",
+          "rationale"
+        ],
+        "properties": {
+          "condition": {"enum": ["no-retrieval", "rag"]},
+          "case_id": {"type": "string"},
+          "support_relation": {"type": "integer", "minimum": 0, "maximum": 2},
+          "population_line_score": {"type": "integer", "minimum": 0, "maximum": 2},
+          "numeric_outcome_score": {"type": "integer", "minimum": 0, "maximum": 2},
+          "citation_validity_score": {"type": "integer", "minimum": 0, "maximum": 2},
+          "evidence_boundary_score": {"type": "integer", "minimum": 0, "maximum": 2},
+          "auditability_score": {"type": "integer", "minimum": 0, "maximum": 2},
+          "critical_failure": {"type": "boolean"},
+          "failure_root_cause": {"enum": ["none", "prompt", "retrieval", "model", "tool", "product_spec"]},
+          "rationale": {"type": "string"}
+        }
+      }
+    }
+  }
+}

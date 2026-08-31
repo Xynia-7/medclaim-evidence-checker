@@ -8,6 +8,7 @@ medclaim-model-output-rag-*.json
 medclaim-model-scored-*.csv
 medclaim-model-results-*.json
 medclaim-model-results-*.md
+medclaim-second-rater-output-*.json
 
 # Keep personal planning, job materials, and local artifacts outside the public portfolio.
 report-*.md

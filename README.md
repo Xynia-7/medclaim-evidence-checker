@@ -26,7 +26,7 @@ python3 run_medclaim_model.py --self-test
 
 当前病例总数为 50：30 条开发/校准病例、20 条隔离 holdout。开发病例不能冒充独立测试结果，50例也不能证明模型有效。
 
-在一次隔离的 `gpt-5.6-sol / low` 探索性运行中，同一20条 holdout 的无检索/RAG Accuracy 为 80%/85%，Macro-F1 为 0.7833/0.8272，Rubric 通过率为 75%/85%，严重失败率均为0%。这是单次、单评分者结果，只能用于形成下一轮假设，不能声称稳定提升。
+在三次隔离的 `gpt-5.6-sol / low` 运行中，同一20条 holdout 的无检索/RAG 平均 Accuracy 为80.0%/81.7%，Macro-F1 为0.7769/0.7915；两次运行的 Accuracy 没有差异，因此不能声称 RAG 稳定提高分类正确率。主评分者给出的平均 Rubric 通过率为73.3%/81.7%，但独立 AI 预复核发现人群/线别维度评分偏宽，最终加权结果仍需第二名人类评分者确认。
 
 ## 文件
 
@@ -51,6 +51,8 @@ python3 run_medclaim_model.py --self-test
 | [`medclaim-model-output-schema.json`](medclaim-model-output-schema.json) | 独立模型结构化输出的 JSON Schema |
 | [`run_medclaim_model.py`](run_medclaim_model.py) | 固定条件并隔离 gold 的无检索/RAG重复实验 runner |
 | [`medclaim-model-comparison-run1.md`](medclaim-model-comparison-run1.md) | 20例无检索/RAG单次探索性对比与错误边界 |
+| [`medclaim-model-comparison-3runs.md`](medclaim-model-comparison-3runs.md) | 三次重复结果、标签稳定性和 AI 预复核敏感性分析 |
+| [`medclaim-second-rater-schema.json`](medclaim-second-rater-schema.json) | 独立评分者六维评分的结构化输出契约 |
 | [`medclaim-error-report-v0.1.md`](medclaim-error-report-v0.1.md) | 多数类规则基线的错误分布与下一轮实验假设 |
 | [`medclaim-demo-script-3min.md`](medclaim-demo-script-3min.md) | 面试现场可照着运行和讲解的3分钟脚本 |
 | [`medclaim-source-pack.md`](medclaim-source-pack.md) | FDA、NCI、EMA、PubMed/PMC 资料边界 |
@@ -80,6 +82,6 @@ case_id,predicted_label,support_relation,population_line_score,numeric_outcome_s
 
 ## 下一里程碑
 
-1. 由第二评分者盲态复核 run1 的六维人工评分；
-2. 用相同参数再运行两次，报告三次均值与波动；
-3. 针对“证据不足”和决定性错误的标签优先级做开发集回归，不修改本轮 holdout gold。
+1. 由第二名人类评分者盲态复核六维分，重点校准人群/线别遗漏；
+2. 针对“证据不足”和决定性错误的标签优先级做开发集回归，不修改本轮 holdout gold；
+3. 完成个人技能迁移验收：独立运行、评分5例并用3分钟讲清结果与限制。
