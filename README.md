@@ -55,6 +55,7 @@ python3 run_medclaim_model.py --self-test
 | [`medclaim-second-rater-schema.json`](medclaim-second-rater-schema.json) | 独立评分者六维评分的结构化输出契约 |
 | [`medclaim-error-report-v0.1.md`](medclaim-error-report-v0.1.md) | 多数类规则基线的错误分布与下一轮实验假设 |
 | [`medclaim-demo-script-3min.md`](medclaim-demo-script-3min.md) | 面试现场可照着运行和讲解的3分钟脚本 |
+| [`medclaim-workflow-metrics.md`](medclaim-workflow-metrics.md) | 人机审核流程、指标口径、计时实验和发布门槛 |
 | [`medclaim-source-pack.md`](medclaim-source-pack.md) | FDA、NCI、EMA、PubMed/PMC 资料边界 |
 | [`medclaim-validation-v0.2.md`](medclaim-validation-v0.2.md) | 数据、Rubric、计算和已知限制复核 |
 | [`medclaim-50-case-validation-v0.1.md`](medclaim-50-case-validation-v0.1.md) | 50例组成、隔离、许可、检索和剩余有效性缺口 |
