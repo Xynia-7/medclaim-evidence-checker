@@ -20,12 +20,12 @@
 
 - 从私有 combined gold 读取 `case_id`、类别、主张、gold标签、证据、人群/线别、严重错误和备注；
 - 从两份 run1 原始JSON读取标签、理由、证据定位、人群/线别、边界和人工复核标志；
-- 合并为40行并按固定种子随机排序；显示 `rating_id`，保留 condition 与 case_id 便于提交后还原；
+- 合并为40行并按固定种子随机排序；显示 `rating_id`、`System A/B` 与 case_id，真实 condition 映射只保存在不交给评分者的私有 key 中；
 - 评分者只填写六维分、严重失败、首要根因和理由。
 
 ## 校验
 
-- 40个 `condition × case_id` 唯一且完整；
+- 40个 `condition × case_id` 唯一且完整，`System A/B` 可由私有 key 无损还原；
 - gold 与两份模型输出各含20个相同 case_id；
 - 六维列限制为0、1、2；严重失败限制为TRUE/FALSE；根因限制为固定六类；
 - 顶部冻结、筛选可用、长文本可见；
