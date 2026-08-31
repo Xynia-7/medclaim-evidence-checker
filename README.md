@@ -11,6 +11,7 @@ python3 evaluate_medclaim.py
 python3 retrieve_medclaim.py --self-test
 python3 retrieve_medclaim.py
 python3 run_medclaim_model.py --self-test
+python3 analyze_rater_agreement.py --self-test
 ```
 
 第二条命令会读取 10 条金标准和多数类规则预测，生成 JSON 与 Markdown 报告。当前基线结果：
@@ -53,6 +54,7 @@ python3 run_medclaim_model.py --self-test
 | [`medclaim-model-comparison-run1.md`](medclaim-model-comparison-run1.md) | 20例无检索/RAG单次探索性对比与错误边界 |
 | [`medclaim-model-comparison-3runs.md`](medclaim-model-comparison-3runs.md) | 三次重复结果、标签稳定性和 AI 预复核敏感性分析 |
 | [`medclaim-second-rater-schema.json`](medclaim-second-rater-schema.json) | 独立评分者六维评分的结构化输出契约 |
+| [`analyze_rater_agreement.py`](analyze_rater_agreement.py) | 标准库逐维一致率、Cohen's κ及边际分布分析器 |
 | [`medclaim-error-report-v0.1.md`](medclaim-error-report-v0.1.md) | 多数类规则基线的错误分布与下一轮实验假设 |
 | [`medclaim-demo-script-3min.md`](medclaim-demo-script-3min.md) | 面试现场可照着运行和讲解的3分钟脚本 |
 | [`medclaim-workflow-metrics.md`](medclaim-workflow-metrics.md) | 人机审核流程、指标口径、计时实验和发布门槛 |
@@ -73,6 +75,16 @@ case_id,predicted_label,support_relation,population_line_score,numeric_outcome_s
 四分类标签只能是：`支持`、`部分支持`、`不支持`、`证据不足`。六维评分只能是 0、1、2；严重失败只能是 `true` 或 `false`。失败根因只能是 `prompt`、`retrieval`、`model`、`tool`、`product_spec`，通过例用 `none`，非模型规则基线用 `not_applicable`。缺失、多余、重复病例或非法值会直接报错并停止。
 
 独立模型只能读取 `medclaim-holdout-prompts-v0.1.csv`。本地金标准文件已由 `.gitignore` 排除，不能放进公开仓库或模型上下文。得到预测并完成盲态人工六维评分后，再显式指定本地金标准运行评测器。
+
+两名评分者完成同一批病例后，将评分规范化为包含 `condition`、`case_id`、六维分和 `critical_failure` 的两份 CSV，再运行：
+
+```bash
+python3 analyze_rater_agreement.py --rater-a rater-a.csv --rater-b rater-b.csv
+```
+
+脚本会拒绝缺失、重复或非法记录，输出逐维原始一致率、类别计数与 Cohen's κ。κ不可定义时保留为空，不能写成0；解释时必须同时报告一致率和边际分布。
+
+κ定义与边际分布口径参照 [scikit-learn 官方文档](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.cohen_kappa_score.html)，但实现仅使用 Python 标准库。
 
 ## 项目边界
 
