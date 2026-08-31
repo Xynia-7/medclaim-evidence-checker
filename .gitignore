@@ -1,0 +1,12 @@
+# Keep evaluation labels isolated from prompts and future public repositories.
+medclaim-holdout-gold-*.csv
+medclaim-holdout-results-*.json
+medclaim-holdout-results-*.md
+medclaim-holdout-results-*.csv
+
+# Keep personal planning, job materials, and local artifacts outside the public portfolio.
+report-*.md
+medical-ai-knowledge-map-*.md
+week-*-workbook.md
+medclaim-resume-bullets.md
+__pycache__/

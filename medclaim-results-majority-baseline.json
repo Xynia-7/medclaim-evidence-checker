@@ -1,0 +1,279 @@
+{
+  "dataset": "medclaim-eval-cases-v0.2.csv",
+  "predictions": "medclaim-predictions-majority-baseline.csv",
+  "baseline": "majority-label rule; no medical content read",
+  "metrics": {
+    "case_count": 10,
+    "accuracy": 0.5,
+    "macro_f1": 0.1667,
+    "critical_failure_count": 0,
+    "critical_failure_rate": 0.0,
+    "pass_count": 0,
+    "pass_rate": 0.0,
+    "mean_total_score": 12.5,
+    "dimension_means": {
+      "support_relation": 1.0,
+      "population_line_score": 0.0,
+      "numeric_outcome_score": 0.0,
+      "citation_validity_score": 0.0,
+      "evidence_boundary_score": 0.0,
+      "auditability_score": 0.0
+    },
+    "per_label": {
+      "支持": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2
+      },
+      "部分支持": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2
+      },
+      "不支持": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6667,
+        "support": 5
+      },
+      "证据不足": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1
+      }
+    },
+    "per_category_accuracy": {
+      "不支持": 1.0,
+      "人群/线别错配": 1.0,
+      "支持": 0.0,
+      "数值失真": 1.0,
+      "证据不足": 0.0,
+      "部分支持": 0.0
+    },
+    "failure_root_causes": {
+      "not_applicable": 10
+    },
+    "confusion_matrix": {
+      "支持": {
+        "支持": 0,
+        "部分支持": 0,
+        "不支持": 2,
+        "证据不足": 0
+      },
+      "部分支持": {
+        "支持": 0,
+        "部分支持": 0,
+        "不支持": 2,
+        "证据不足": 0
+      },
+      "不支持": {
+        "支持": 0,
+        "部分支持": 0,
+        "不支持": 5,
+        "证据不足": 0
+      },
+      "证据不足": {
+        "支持": 0,
+        "部分支持": 0,
+        "不支持": 1,
+        "证据不足": 0
+      }
+    },
+    "cases": [
+      {
+        "case_id": "MC001",
+        "category": "支持",
+        "gold_label": "支持",
+        "predicted_label": "不支持",
+        "label_correct": false,
+        "scores": {
+          "support_relation": 0,
+          "population_line_score": 0,
+          "numeric_outcome_score": 0,
+          "citation_validity_score": 0,
+          "evidence_boundary_score": 0,
+          "auditability_score": 0
+        },
+        "total_score": 0.0,
+        "critical_failure": false,
+        "failure_root_cause": "not_applicable",
+        "passed": false
+      },
+      {
+        "case_id": "MC002",
+        "category": "支持",
+        "gold_label": "支持",
+        "predicted_label": "不支持",
+        "label_correct": false,
+        "scores": {
+          "support_relation": 0,
+          "population_line_score": 0,
+          "numeric_outcome_score": 0,
+          "citation_validity_score": 0,
+          "evidence_boundary_score": 0,
+          "auditability_score": 0
+        },
+        "total_score": 0.0,
+        "critical_failure": false,
+        "failure_root_cause": "not_applicable",
+        "passed": false
+      },
+      {
+        "case_id": "MC003",
+        "category": "部分支持",
+        "gold_label": "部分支持",
+        "predicted_label": "不支持",
+        "label_correct": false,
+        "scores": {
+          "support_relation": 0,
+          "population_line_score": 0,
+          "numeric_outcome_score": 0,
+          "citation_validity_score": 0,
+          "evidence_boundary_score": 0,
+          "auditability_score": 0
+        },
+        "total_score": 0.0,
+        "critical_failure": false,
+        "failure_root_cause": "not_applicable",
+        "passed": false
+      },
+      {
+        "case_id": "MC004",
+        "category": "部分支持",
+        "gold_label": "部分支持",
+        "predicted_label": "不支持",
+        "label_correct": false,
+        "scores": {
+          "support_relation": 0,
+          "population_line_score": 0,
+          "numeric_outcome_score": 0,
+          "citation_validity_score": 0,
+          "evidence_boundary_score": 0,
+          "auditability_score": 0
+        },
+        "total_score": 0.0,
+        "critical_failure": false,
+        "failure_root_cause": "not_applicable",
+        "passed": false
+      },
+      {
+        "case_id": "MC005",
+        "category": "不支持",
+        "gold_label": "不支持",
+        "predicted_label": "不支持",
+        "label_correct": true,
+        "scores": {
+          "support_relation": 2,
+          "population_line_score": 0,
+          "numeric_outcome_score": 0,
+          "citation_validity_score": 0,
+          "evidence_boundary_score": 0,
+          "auditability_score": 0
+        },
+        "total_score": 25.0,
+        "critical_failure": false,
+        "failure_root_cause": "not_applicable",
+        "passed": false
+      },
+      {
+        "case_id": "MC006",
+        "category": "不支持",
+        "gold_label": "不支持",
+        "predicted_label": "不支持",
+        "label_correct": true,
+        "scores": {
+          "support_relation": 2,
+          "population_line_score": 0,
+          "numeric_outcome_score": 0,
+          "citation_validity_score": 0,
+          "evidence_boundary_score": 0,
+          "auditability_score": 0
+        },
+        "total_score": 25.0,
+        "critical_failure": false,
+        "failure_root_cause": "not_applicable",
+        "passed": false
+      },
+      {
+        "case_id": "MC007",
+        "category": "证据不足",
+        "gold_label": "证据不足",
+        "predicted_label": "不支持",
+        "label_correct": false,
+        "scores": {
+          "support_relation": 0,
+          "population_line_score": 0,
+          "numeric_outcome_score": 0,
+          "citation_validity_score": 0,
+          "evidence_boundary_score": 0,
+          "auditability_score": 0
+        },
+        "total_score": 0.0,
+        "critical_failure": false,
+        "failure_root_cause": "not_applicable",
+        "passed": false
+      },
+      {
+        "case_id": "MC008",
+        "category": "人群/线别错配",
+        "gold_label": "不支持",
+        "predicted_label": "不支持",
+        "label_correct": true,
+        "scores": {
+          "support_relation": 2,
+          "population_line_score": 0,
+          "numeric_outcome_score": 0,
+          "citation_validity_score": 0,
+          "evidence_boundary_score": 0,
+          "auditability_score": 0
+        },
+        "total_score": 25.0,
+        "critical_failure": false,
+        "failure_root_cause": "not_applicable",
+        "passed": false
+      },
+      {
+        "case_id": "MC009",
+        "category": "人群/线别错配",
+        "gold_label": "不支持",
+        "predicted_label": "不支持",
+        "label_correct": true,
+        "scores": {
+          "support_relation": 2,
+          "population_line_score": 0,
+          "numeric_outcome_score": 0,
+          "citation_validity_score": 0,
+          "evidence_boundary_score": 0,
+          "auditability_score": 0
+        },
+        "total_score": 25.0,
+        "critical_failure": false,
+        "failure_root_cause": "not_applicable",
+        "passed": false
+      },
+      {
+        "case_id": "MC010",
+        "category": "数值失真",
+        "gold_label": "不支持",
+        "predicted_label": "不支持",
+        "label_correct": true,
+        "scores": {
+          "support_relation": 2,
+          "population_line_score": 0,
+          "numeric_outcome_score": 0,
+          "citation_validity_score": 0,
+          "evidence_boundary_score": 0,
+          "auditability_score": 0
+        },
+        "total_score": 25.0,
+        "critical_failure": false,
+        "failure_root_cause": "not_applicable",
+        "passed": false
+      }
+    ]
+  },
+  "limitation": "Calibration-pipeline check only; not evidence of clinical or external model performance."
+}

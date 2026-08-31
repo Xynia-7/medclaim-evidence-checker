@@ -1,0 +1,11 @@
+case_id,medical_claim,source_url
+MH001,"FDA 标签建议：既往接受 trastuzumab 后、开始 Enhertu 前，如条件允许，应重新评估 HER2 状态。",https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761139s038s042lbl.pdf
+MH002,"NCI 对 DESTINY-Gastric01 的总结称，12 名患者（10%）发生了药物相关间质性肺病。",https://www.cancer.gov/types/stomach/hp/stomach-treatment-pdq
+MH003,"DESTINY-Gastric01 是开放标签、随机、Ⅱ期研究，并在日本、韩国和美国招募患者。",https://www.cancer.gov/types/stomach/hp/stomach-treatment-pdq
+MH004,"EMA 称 Enhertu 可出现严重间质性肺病或肺炎，最多影响十分之一患者；这证明胃癌亚组的发生率恰好为 10%。",https://www.ema.europa.eu/en/medicines/human/EPAR/enhertu
+MH005,"FDA 对胃或胃食管交界部腺癌适应证推荐 Enhertu 5.4 mg/kg，每 3 周一次。",https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761139s038s042lbl.pdf
+MH006,"NCI 将 DESTINY-Gastric01 描述为双盲、安慰剂对照、按 1:1 随机的研究。",https://www.cancer.gov/types/stomach/hp/stomach-treatment-pdq
+MH007,"FDA 标签证明 Enhertu 能让胃或胃食管交界部癌患者的 5 年健康相关生活质量评分提高 15 分。",https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761139s038s042lbl.pdf
+MH008,"FDA 的胃癌适应证包括 12 岁及以上的青少年患者。",https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761139s038s042lbl.pdf
+MH009,"EMA 的胃癌适应证面向尚未接受 trastuzumab 的 HER2 阳性患者。",https://www.ema.europa.eu/en/medicines/human/EPAR/enhertu
+MH010,"NCI 报告 DESTINY-Gastric01 中 48% 的患者发生 3–4 级贫血，41% 发生 3–4 级中性粒细胞减少。",https://www.cancer.gov/types/stomach/hp/stomach-treatment-pdq

@@ -1,0 +1,11 @@
+case_id,predicted_label,support_relation,population_line_score,numeric_outcome_score,citation_validity_score,evidence_boundary_score,auditability_score,critical_failure,failure_root_cause,reason,evidence_locator
+MC001,不支持,0,0,0,0,0,0,false,not_applicable,"固定输出多数类；未读取医学内容。","无；规则基线不检索。"
+MC002,不支持,0,0,0,0,0,0,false,not_applicable,"固定输出多数类；未读取医学内容。","无；规则基线不检索。"
+MC003,不支持,0,0,0,0,0,0,false,not_applicable,"固定输出多数类；未读取医学内容。","无；规则基线不检索。"
+MC004,不支持,0,0,0,0,0,0,false,not_applicable,"固定输出多数类；未读取医学内容。","无；规则基线不检索。"
+MC005,不支持,2,0,0,0,0,0,false,not_applicable,"固定输出多数类；标签仅属偶然命中。","无；规则基线不检索。"
+MC006,不支持,2,0,0,0,0,0,false,not_applicable,"固定输出多数类；标签仅属偶然命中。","无；规则基线不检索。"
+MC007,不支持,0,0,0,0,0,0,false,not_applicable,"固定输出多数类；未读取医学内容。","无；规则基线不检索。"
+MC008,不支持,2,0,0,0,0,0,false,not_applicable,"固定输出多数类；标签仅属偶然命中。","无；规则基线不检索。"
+MC009,不支持,2,0,0,0,0,0,false,not_applicable,"固定输出多数类；标签仅属偶然命中。","无；规则基线不检索。"
+MC010,不支持,2,0,0,0,0,0,false,not_applicable,"固定输出多数类；标签仅属偶然命中。","无；规则基线不检索。"

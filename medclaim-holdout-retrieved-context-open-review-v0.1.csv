@@ -1,0 +1,81 @@
+case_id,medical_claim,source_url,retrieved_context
+MH011,该综述描述的 ADC 作用过程包括结合肿瘤细胞表面靶点、经内体—溶酶体途径内化、释放细胞毒载荷并作用于细胞内靶点。,https://pmc.ncbi.nlm.nih.gov/articles/PMC11972320/,"[PMC_MECHANISM] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | Mechanism of action; Chinese paraphrase
+ADC 先结合肿瘤细胞表面特异靶点，随后经内体—溶酶体途径内化；连接子裂解或抗体降解释放细胞毒载荷。载荷可作用于微管或 DNA，部分可穿过细胞膜产生邻近细胞的旁观者杀伤。
+
+[PMC_CONCLUSION] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | Conclusions and perspectives; Chinese paraphrase
+综述把下一代 ADC、组合治疗、更精准的靶向与溶酶体递送、更强载荷和稳定可裂解连接子列为未来方向，同时强调结构复杂、靶向递送、毒性、耐药和抗原异质性等挑战。展望不构成对每位患者的确定性生存保证。
+
+[PMC_CMG901] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target CLDN18.2 > CMG901; Chinese paraphrase
+CMG901 由靶向 CLDN18.2 的人源化单抗 CM311、可裂解连接子和 MMAE 组成。文章描述的是晚期实体瘤Ⅰ期研究，并转述 89 人中 ORR 33%、DCR 70%；这不等于面向所有晚期胃癌患者的 FDA 商业上市批准。"
+MH012,该综述称 RC48 由高亲和力抗 HER2 单抗 hertuzumab、可裂解连接子和 MMAE 组成，并于 2021 年获 NMPA 批准用于既往至少两种系统化疗方案后的 HER2 过表达局部晚期或转移性胃/GEJ 癌。,https://pmc.ncbi.nlm.nih.gov/articles/PMC11972320/,"[PMC_RC48] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target HER2 > RC48; Chinese paraphrase
+综述称 RC48 由高亲和力抗 HER2 单抗 hertuzumab、可裂解连接子和 MMAE 构成，并转述其 2021 年 NMPA 批准用于既往至少两种系统化疗方案后的 HER2 过表达局部晚期或转移性胃/GEJ 癌。该二手转述不能替代当前 NMPA 原始标签核验。
+
+[PMC_CMG901] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target CLDN18.2 > CMG901; Chinese paraphrase
+CMG901 由靶向 CLDN18.2 的人源化单抗 CM311、可裂解连接子和 MMAE 组成。文章描述的是晚期实体瘤Ⅰ期研究，并转述 89 人中 ORR 33%、DCR 70%；这不等于面向所有晚期胃癌患者的 FDA 商业上市批准。
+
+[PMC_TDXD] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target HER2 > DS-8201a; Chinese paraphrase
+T-DXd 由 trastuzumab、可裂解四肽连接子和拓扑异构酶Ⅰ抑制剂 DXd 组成，DAR 为 8。文章讨论了低 HER2 表达研究潜力，但不支持其对每位 HER2-low 胃癌患者必然有效。"
+MH013,该综述描述 T-DXd 由 trastuzumab、可裂解四肽连接子和拓扑异构酶Ⅰ抑制剂 DXd 组成，DAR 为 8；这证明它对每一位 HER2-low 胃癌患者都必然有效。,https://pmc.ncbi.nlm.nih.gov/articles/PMC11972320/,"[PMC_TDXD] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target HER2 > DS-8201a; Chinese paraphrase
+T-DXd 由 trastuzumab、可裂解四肽连接子和拓扑异构酶Ⅰ抑制剂 DXd 组成，DAR 为 8。文章讨论了低 HER2 表达研究潜力，但不支持其对每位 HER2-low 胃癌患者必然有效。
+
+[PMC_SKB264] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target TROP2 > SKB264; Chinese paraphrase
+SKB264 是抗 TROP2 单抗通过可裂解连接子连接拓扑异构酶Ⅰ抑制剂的 ADC。Ⅰ–Ⅱ期 first-in-human 初步结果有 17 名可评患者，ORR 35.3%、DCR 70.6%，并提到 1 名胃癌患者部分缓解；文章未报告胃癌随机Ⅲ期或 18.7 个月 OS。
+
+[PMC_CMG901] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target CLDN18.2 > CMG901; Chinese paraphrase
+CMG901 由靶向 CLDN18.2 的人源化单抗 CM311、可裂解连接子和 MMAE 组成。文章描述的是晚期实体瘤Ⅰ期研究，并转述 89 人中 ORR 33%、DCR 70%；这不等于面向所有晚期胃癌患者的 FDA 商业上市批准。"
+MH014,该综述描述 CMG901 为靶向 CLDN18.2、携带 MMAE 的 ADC，并确认它已获 FDA 上市批准用于所有晚期胃癌患者。,https://pmc.ncbi.nlm.nih.gov/articles/PMC11972320/,"[PMC_CMG901] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target CLDN18.2 > CMG901; Chinese paraphrase
+CMG901 由靶向 CLDN18.2 的人源化单抗 CM311、可裂解连接子和 MMAE 组成。文章描述的是晚期实体瘤Ⅰ期研究，并转述 89 人中 ORR 33%、DCR 70%；这不等于面向所有晚期胃癌患者的 FDA 商业上市批准。
+
+[PMC_RC48] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target HER2 > RC48; Chinese paraphrase
+综述称 RC48 由高亲和力抗 HER2 单抗 hertuzumab、可裂解连接子和 MMAE 构成，并转述其 2021 年 NMPA 批准用于既往至少两种系统化疗方案后的 HER2 过表达局部晚期或转移性胃/GEJ 癌。该二手转述不能替代当前 NMPA 原始标签核验。
+
+[PMC_CONCLUSION] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | Conclusions and perspectives; Chinese paraphrase
+综述把下一代 ADC、组合治疗、更精准的靶向与溶酶体递送、更强载荷和稳定可裂解连接子列为未来方向，同时强调结构复杂、靶向递送、毒性、耐药和抗原异质性等挑战。展望不构成对每位患者的确定性生存保证。"
+MH015,该综述称 ADC 与肿瘤细胞结合后不会内化，细胞毒载荷始终停留在细胞外。,https://pmc.ncbi.nlm.nih.gov/articles/PMC11972320/,"[PMC_MECHANISM] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | Mechanism of action; Chinese paraphrase
+ADC 先结合肿瘤细胞表面特异靶点，随后经内体—溶酶体途径内化；连接子裂解或抗体降解释放细胞毒载荷。载荷可作用于微管或 DNA，部分可穿过细胞膜产生邻近细胞的旁观者杀伤。
+
+[PMC_CONCLUSION] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | Conclusions and perspectives; Chinese paraphrase
+综述把下一代 ADC、组合治疗、更精准的靶向与溶酶体递送、更强载荷和稳定可裂解连接子列为未来方向，同时强调结构复杂、靶向递送、毒性、耐药和抗原异质性等挑战。展望不构成对每位患者的确定性生存保证。
+
+[PMC_RC48] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target HER2 > RC48; Chinese paraphrase
+综述称 RC48 由高亲和力抗 HER2 单抗 hertuzumab、可裂解连接子和 MMAE 构成，并转述其 2021 年 NMPA 批准用于既往至少两种系统化疗方案后的 HER2 过表达局部晚期或转移性胃/GEJ 癌。该二手转述不能替代当前 NMPA 原始标签核验。"
+MH016,该综述认为 ADC 耐药只能在给药后获得，不可能在治疗开始时就存在原发耐药。,https://pmc.ncbi.nlm.nih.gov/articles/PMC11972320/,"[PMC_RESISTANCE] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | Drug resistance; Chinese paraphrase
+ADC 耐药既可在用药后出现，属于继发或获得性耐药，也可在治疗开始时就存在，属于原发或 de novo 耐药；文章将耐药视为需要解决的重要障碍。
+
+[PMC_CONCLUSION] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | Conclusions and perspectives; Chinese paraphrase
+综述把下一代 ADC、组合治疗、更精准的靶向与溶酶体递送、更强载荷和稳定可裂解连接子列为未来方向，同时强调结构复杂、靶向递送、毒性、耐药和抗原异质性等挑战。展望不构成对每位患者的确定性生存保证。
+
+[PMC_RC48] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target HER2 > RC48; Chinese paraphrase
+综述称 RC48 由高亲和力抗 HER2 单抗 hertuzumab、可裂解连接子和 MMAE 构成，并转述其 2021 年 NMPA 批准用于既往至少两种系统化疗方案后的 HER2 过表达局部晚期或转移性胃/GEJ 癌。该二手转述不能替代当前 NMPA 原始标签核验。"
+MH017,该综述报告 SKB264 已完成胃癌随机Ⅲ期试验，中位总生存期为 18.7 个月。,https://pmc.ncbi.nlm.nih.gov/articles/PMC11972320/,"[PMC_SKB264] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target TROP2 > SKB264; Chinese paraphrase
+SKB264 是抗 TROP2 单抗通过可裂解连接子连接拓扑异构酶Ⅰ抑制剂的 ADC。Ⅰ–Ⅱ期 first-in-human 初步结果有 17 名可评患者，ORR 35.3%、DCR 70.6%，并提到 1 名胃癌患者部分缓解；文章未报告胃癌随机Ⅲ期或 18.7 个月 OS。
+
+[PMC_CONCLUSION] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | Conclusions and perspectives; Chinese paraphrase
+综述把下一代 ADC、组合治疗、更精准的靶向与溶酶体递送、更强载荷和稳定可裂解连接子列为未来方向，同时强调结构复杂、靶向递送、毒性、耐药和抗原异质性等挑战。展望不构成对每位患者的确定性生存保证。
+
+[PMC_RC48] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target HER2 > RC48; Chinese paraphrase
+综述称 RC48 由高亲和力抗 HER2 单抗 hertuzumab、可裂解连接子和 MMAE 构成，并转述其 2021 年 NMPA 批准用于既往至少两种系统化疗方案后的 HER2 过表达局部晚期或转移性胃/GEJ 癌。该二手转述不能替代当前 NMPA 原始标签核验。"
+MH018,CMG901 的Ⅰ期研究出现 ORR 33% 和 DCR 70%，因此该综述证明它已经取得 FDA 商业上市批准。,https://pmc.ncbi.nlm.nih.gov/articles/PMC11972320/,"[PMC_CMG901] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target CLDN18.2 > CMG901; Chinese paraphrase
+CMG901 由靶向 CLDN18.2 的人源化单抗 CM311、可裂解连接子和 MMAE 组成。文章描述的是晚期实体瘤Ⅰ期研究，并转述 89 人中 ORR 33%、DCR 70%；这不等于面向所有晚期胃癌患者的 FDA 商业上市批准。
+
+[PMC_SKB264] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target TROP2 > SKB264; Chinese paraphrase
+SKB264 是抗 TROP2 单抗通过可裂解连接子连接拓扑异构酶Ⅰ抑制剂的 ADC。Ⅰ–Ⅱ期 first-in-human 初步结果有 17 名可评患者，ORR 35.3%、DCR 70.6%，并提到 1 名胃癌患者部分缓解；文章未报告胃癌随机Ⅲ期或 18.7 个月 OS。
+
+[PMC_RC48] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target HER2 > RC48; Chinese paraphrase
+综述称 RC48 由高亲和力抗 HER2 单抗 hertuzumab、可裂解连接子和 MMAE 构成，并转述其 2021 年 NMPA 批准用于既往至少两种系统化疗方案后的 HER2 过表达局部晚期或转移性胃/GEJ 癌。该二手转述不能替代当前 NMPA 原始标签核验。"
+MH019,该综述报告 SKB264 初步研究纳入 17 名可评患者，ORR 为 53.3%、DCR 为 60.7%，且 10 名胃癌患者达到部分缓解。,https://pmc.ncbi.nlm.nih.gov/articles/PMC11972320/,"[PMC_SKB264] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target TROP2 > SKB264; Chinese paraphrase
+SKB264 是抗 TROP2 单抗通过可裂解连接子连接拓扑异构酶Ⅰ抑制剂的 ADC。Ⅰ–Ⅱ期 first-in-human 初步结果有 17 名可评患者，ORR 35.3%、DCR 70.6%，并提到 1 名胃癌患者部分缓解；文章未报告胃癌随机Ⅲ期或 18.7 个月 OS。
+
+[PMC_CMG901] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target CLDN18.2 > CMG901; Chinese paraphrase
+CMG901 由靶向 CLDN18.2 的人源化单抗 CM311、可裂解连接子和 MMAE 组成。文章描述的是晚期实体瘤Ⅰ期研究，并转述 89 人中 ORR 33%、DCR 70%；这不等于面向所有晚期胃癌患者的 FDA 商业上市批准。
+
+[PMC_TDXD] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target HER2 > DS-8201a; Chinese paraphrase
+T-DXd 由 trastuzumab、可裂解四肽连接子和拓扑异构酶Ⅰ抑制剂 DXd 组成，DAR 为 8。文章讨论了低 HER2 表达研究潜力，但不支持其对每位 HER2-low 胃癌患者必然有效。"
+MH020,该综述展望下一代 ADC、组合治疗和更精确递送，因此保证这些策略会延长每一位胃癌患者的生存。,https://pmc.ncbi.nlm.nih.gov/articles/PMC11972320/,"[PMC_CONCLUSION] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | Conclusions and perspectives; Chinese paraphrase
+综述把下一代 ADC、组合治疗、更精准的靶向与溶酶体递送、更强载荷和稳定可裂解连接子列为未来方向，同时强调结构复杂、靶向递送、毒性、耐药和抗原异质性等挑战。展望不构成对每位患者的确定性生存保证。
+
+[PMC_CMG901] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target CLDN18.2 > CMG901; Chinese paraphrase
+CMG901 由靶向 CLDN18.2 的人源化单抗 CM311、可裂解连接子和 MMAE 组成。文章描述的是晚期实体瘤Ⅰ期研究，并转述 89 人中 ORR 33%、DCR 70%；这不等于面向所有晚期胃癌患者的 FDA 商业上市批准。
+
+[PMC_SKB264] Navigating the future of gastric cancer treatment: a review on the impact of antibody-drug conjugates | Cell Death Discovery 2025; CC BY 4.0; checked 2026-09-01 | ADCs in GC treatment > Target TROP2 > SKB264; Chinese paraphrase
+SKB264 是抗 TROP2 单抗通过可裂解连接子连接拓扑异构酶Ⅰ抑制剂的 ADC。Ⅰ–Ⅱ期 first-in-human 初步结果有 17 名可评患者，ORR 35.3%、DCR 70.6%，并提到 1 名胃癌患者部分缓解；文章未报告胃癌随机Ⅲ期或 18.7 个月 OS。"
